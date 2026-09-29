@@ -1,0 +1,15 @@
+[project]
+name = "titan-fleet"
+version = "0.1.0"
+description = "SLO-budgeted control plane for routing and scaling across managed LLM APIs and self-hosted GPU endpoints: a deterministic simulator, baselines, and an SLO-Budget Regret benchmark."
+requires-python = ">=3.10"
+license = { text = "MIT" }
+# scipy: exact LP (HiGHS) for the hindsight oracle only; the simulator and policies are stdlib.
+dependencies = ["scipy>=1.11"]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
